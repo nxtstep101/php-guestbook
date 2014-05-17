@@ -1,10 +1,12 @@
 <?php
+require "guestbook.html";
 if ($_POST) {
   $comment = $_POST['comment'];
   $handle  = fopen("guestbook.html", "a");
   fwrite($handle, $comment);
   fclose($handle);
 }
+?>
 <!DOCTYPE html>
 <html>
    <body>
