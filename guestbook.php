@@ -1,9 +1,12 @@
 <?php
 require "guestbook.html";
 if ($_POST) {
-    $name    = $_POST['name'];
-    $comment = $_POST['comment'];
-    $handle  = fopen("guestbook.html", "a");
+    $allowed_tags = '<b><i><br/>';
+    $stripName    = strip_tags($_POST['name'], $allowed_tags);
+    $stripComment = strip_tags($_POST['comment'], $allowed_tags);
+    $name         = $stripName;
+    $comment      = $stripComment;
+    $handle       = fopen("guestbook.html", "a");
     fwrite($handle, $name . "<br/>" . $comment);
     fclose($handle);
 }
