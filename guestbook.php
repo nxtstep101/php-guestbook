@@ -1,5 +1,5 @@
 <?php
-require "guestbook.html";
+include "guestbook.html";
 if ($_POST) {
     if (empty($_POST["name"]) || empty($_POST["comment"])) {
         echo "<script type='text/javascript'>alert('Please fill out the form before submitting.');</script>";
