@@ -1,17 +1,6 @@
 <?php
 include "guestbook.html";
 if ($_POST) {
-    if (isset($_COOKIE['posts'])) {
-        if ($_COOKIE['posts'] < 5) {
-            $posts = $_COOKIE['posts'] + 1;
-            setcookie('posts', $posts, time() + 100 * 10);
-        } else {
-            echo "<div style='text-align:center;'>You've attempted to submit too many posts at once.</div>";
-            return "<style>form{display:none;}</style>";
-        }
-    } else {
-        setcookie('posts', 1, time() + 120 * 10);
-    }
     if (empty($_POST["name"]) || empty($_POST["comment"])) {
         echo "<script type='text/javascript'>alert('Please fill out the form before submitting.');</script>";
     } else {
