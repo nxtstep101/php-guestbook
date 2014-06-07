@@ -19,7 +19,7 @@ if ($_POST) {
 <html>
    <body>
       <form name="form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-         Name:<br /><input type="text" title="Enter your Username" name="name" /><br />
+         Name:<br /><input type="text" title="Enter your name" name="name" /><br />
          Message:<br /><textarea name="comment" maxlength="1000" cols="25" rows="6"></textarea><br />
          <input type="submit" name="submit" value="submit">
       </form>
